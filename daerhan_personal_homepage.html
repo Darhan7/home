@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daerhan Jianati | Personal Homepage</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #121a31;
+      --card: rgba(255,255,255,0.08);
+      --card-border: rgba(255,255,255,0.12);
+      --text: #e9eefc;
+      --muted: #b8c1de;
+      --accent: #7cc7ff;
+      --accent-2: #9ef0c8;
+      --shadow: 0 18px 60px rgba(0,0,0,0.28);
+      --maxw: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124,199,255,0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(158,240,200,0.12), transparent 24%),
+        linear-gradient(180deg, #0b1020 0%, #0e1530 48%, #0a1020 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(9, 14, 29, 0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 72px 0 36px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      padding: 34px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(124,199,255,0.12);
+      color: #d9f1ff;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(34px, 6vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 720px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+
+    .btn:hover {
+      background: rgba(255,255,255,0.11);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, rgba(124,199,255,0.25), rgba(158,240,200,0.18));
+      border-color: rgba(124,199,255,0.28);
+    }
+
+    .hero-side {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .metric {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .metric .label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .metric .value {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .section {
+      padding: 18px 0 8px;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      margin: 0 0 14px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 820px;
+      margin-bottom: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      padding: 24px;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #dfe7ff;
+      font-size: 13px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .item {
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .item-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .item-title {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .item-subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .item-date {
+      white-space: nowrap;
+      color: var(--accent-2);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    ul {
+      margin: 10px 0 0 18px;
+      padding: 0;
+    }
+
+    li { margin: 8px 0; color: #dde5ff; }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .contact-row {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer {
+      padding: 34px 0 52px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding-top: 40px;
+      }
+      .hero-main, .hero-side, .card {
+        padding: 22px;
+      }
+      .item-head {
+        flex-direction: column;
+      }
+      .item-date {
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Daerhan Jianati</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <section class="panel hero-main">
+        <div class="eyebrow">Electronic Information Science &amp; Technology · NJU</div>
+        <h1>Building multimodal vision systems for geometry, perception, and sensing.</h1>
+        <p class="subtitle">
+          I am <strong>Daerhan Jianati</strong>, an undergraduate student at <strong>Nanjing University</strong>.
+          My recent work focuses on <strong>RGB–active NIR fusion</strong>, <strong>depth estimation</strong>,
+          <strong>self-supervised learning</strong>, and <strong>multimodal perception</strong> for geometry-oriented vision.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="mailto:darhanjanat@smail.nju.edu.cn">Email Me</a>
+          <a class="btn" href="#research">View Research</a>
+        </div>
+      </section>
+
+      <aside class="panel hero-side">
+        <div class="metric">
+          <div class="label">Current Role</div>
+          <div class="value">B.S. Student, NJU</div>
+        </div>
+        <div class="metric">
+          <div class="label">Core Interests</div>
+          <div class="value">RGB/NIR Fusion · Depth · Geometry</div>
+        </div>
+        <div class="metric">
+          <div class="label">Tools</div>
+          <div class="value">Python · Matlab · Arduino · C</div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section" id="about">
+      <h2>About</h2>
+      <div class="grid-2">
+        <div class="card">
+          <p>
+            I am currently pursuing a B.S. in Electronic Information Science &amp; Technology at the School of Electronic Science and Engineering, Nanjing University.
+            My work spans multimodal sensing, computer vision, and machine learning, with a particular interest in how diverse sensor signals can be fused to improve robustness and geometric understanding.
+          </p>
+          <p>
+            Beyond core research, I also enjoy building complete pipelines: data collection, calibration, model design, evaluation, and deployment-aware analysis.
+          </p>
+        </div>
+        <div class="card">
+          <strong>Research Interests</strong>
+          <div class="tags">
+            <span class="tag">Multimodal Fusion</span>
+            <span class="tag">RGB–NIR Vision</span>
+            <span class="tag">Depth Estimation</span>
+            <span class="tag">Self-Supervised Learning</span>
+            <span class="tag">Geometry-Oriented Vision</span>
+            <span class="tag">Sensor Calibration</span>
+            <span class="tag">Computational Imaging</span>
+            <span class="tag">Embodied Perception</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <h2>Selected Research</h2>
+      <p class="section-intro">
+        My recent research explores how multimodal signals such as RGB, active NIR, polarization, LiDAR, and hyperspectral measurements can be combined to build more robust perception systems.
+      </p>
+      <div class="timeline">
+        <article class="item">
+          <div class="item-head">
+            <div>
+              <div class="item-title">Self-Supervised RGB–Active NIR Fusion for Geometry-Oriented Vision</div>
+              <div class="item-subtitle">First-author research</div>
+            </div>
+            <div class="item-date">Nov 2025 – Mar 2026</div>
+          </div>
+          <ul>
+            <li>Developed a self-supervised single-channel fusion framework for pixel-aligned RGB and active NIR inputs.</li>
+            <li>Designed pixel-wise mixing, stereo reprojection, and exposure-aware reliability gating for geometry-oriented representation learning.</li>
+            <li>Evaluated downstream performance on detection, stereo depth, SfM, SLAM, feature matching, and efficiency.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <div class="item-head">
+            <div>
+              <div class="item-title">Per-Pixel Illumination Estimation via Multi-Sensor Fusion</div>
+              <div class="item-subtitle">CITE Lab, Nanjing University</div>
+            </div>
+            <div class="item-date">Jun 2025 – Oct 2025</div>
+          </div>
+          <ul>
+            <li>Built a multi-sensor fusion pipeline combining HR-RGB and LR-HSI for illumination estimation.</li>
+            <li>Reproduced baseline methods and benchmarked performance across multiple down-sampling settings.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <div class="item-head">
+            <div>
+              <div class="item-title">Multimodal Information Fusion for Depth Estimation</div>
+              <div class="item-subtitle">RGB / NIR / Polarization</div>
+            </div>
+            <div class="item-date">Aug 2025 – Oct 2025</div>
+          </div>
+          <ul>
+            <li>Developed a multimodal depth estimation framework with custom losses and multi-stage knowledge distillation.</li>
+            <li>Processed and calibrated RGB-NIR data synchronized with LiDAR for densification and mask filtering.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <h2>Experience</h2>
+      <div class="grid-2">
+        <div class="card">
+          <div class="item-title">Education</div>
+          <div class="item-subtitle">Nanjing University · 2022.09 – 2026.06</div>
+          <ul>
+            <li>B.S. in Electronic Information Science &amp; Technology</li>
+            <li>School of Electronic Science and Engineering</li>
+            <li>Honors: Ethnic Minority Students’ Pomegranate Seed Scholarship (2024, 2025)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="item-title">Internship</div>
+          <div class="item-subtitle">College of Water Conservancy and Architectural Engineering, Shihezi University · 2024.07 – 2024.09</div>
+          <ul>
+            <li>Analyzed multivariate environmental sensor data for anomaly detection and trend analysis.</li>
+            <li>Trained machine learning models including Random Forest and SVM for early anomaly detection.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <h2>Projects &amp; Other Work</h2>
+      <div class="timeline">
+        <article class="item">
+          <div class="item-head">
+            <div>
+              <div class="item-title">3D Dynamic Heart Reconstruction from 2D Medical Imaging</div>
+              <div class="item-subtitle">Course Project · Project Lead</div>
+            </div>
+            <div class="item-date">Feb 2025 – May 2025</div>
+          </div>
+          <ul>
+            <li>Led an end-to-end pipeline for preprocessing, segmentation, training, reconstruction, and myocardial motion visualization.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <div class="item-head">
+            <div>
+              <div class="item-title">Elderly Fall Detection Based on Reservoir Computing Transistors</div>
+              <div class="item-subtitle">National Undergraduate Innovation and Entrepreneurship Training Program</div>
+            </div>
+            <div class="item-date">Nov 2023 – Dec 2024</div>
+          </div>
+          <ul>
+            <li>Built a hardware-software co-design system integrating analog computing, Arduino-based signal processing, Bluetooth transmission, and vision-based motion analysis.</li>
+            <li>Contributed to a related patent application as the fifth inventor.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <div class="item-head">
+            <div>
+              <div class="item-title">Quantum Implementation of Finite Element Analysis</div>
+              <div class="item-subtitle">North Carolina State University · Exchange Experience</div>
+            </div>
+            <div class="item-date">Jan 2025 – Feb 2025</div>
+          </div>
+          <ul>
+            <li>Implemented a quantum solver for FEM linear systems using Block Encoding and Quantum Signal Processing.</li>
+            <li>Explored BPX preconditioning to improve stability under high-condition-number settings.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <div class="item-head">
+            <div>
+              <div class="item-title">Intelligent Risk Butler: Exchange Rate Risk Inspection System</div>
+              <div class="item-subtitle">20th Citi Cup Financial Innovation Application Competition · Core Member</div>
+            </div>
+            <div class="item-date">Jan 2025 – Jun 2025</div>
+          </div>
+          <ul>
+            <li>Developed the LLM module and participated in building a multi-currency exchange-rate risk assessment system.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>
+          I am interested in research opportunities related to multimodal perception, geometry-oriented vision, and sensor fusion.
+        </p>
+        <div class="contact-list">
+          <div class="contact-row"><strong>Email:</strong> <a href="mailto:darhanjanat@smail.nju.edu.cn">darhanjanat@smail.nju.edu.cn</a></div>
+          <div class="contact-row"><strong>Phone:</strong> +86-198-5289-5035</div>
+          <div class="contact-row"><strong>Affiliation:</strong> School of Electronic Science and Engineering, Nanjing University</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© 2026 Daerhan Jianati. Last updated for a simple academic homepage draft.</div>
+    </footer>
+  </main>
+</body>
+</html>
