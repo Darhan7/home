@@ -8,11 +8,13 @@
     content="Daerhan Jianati — computational imaging, multispectral sensing, multimodal perception, and robotic systems."
   />
   <title>Daerhan Jianati | Personal Homepage</title>
+
   <link
     rel="icon"
     type="image/svg+xml"
     href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxNzNlNTQiLz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8cGF0aCBkPSJNMzIgMTIgTDQyIDI3IEwzNSAzMiBMMjQgMjAgWiIgZmlsbD0iI2U3ZjBmNSIvPgogIDxwYXRoIGQ9Ik01MiAzMiBMMzcgNDIgTDMyIDM1IEw0NCAyNCBaIiBmaWxsPSIjYzdkY2U4Ii8+CiAgPHBhdGggZD0iTTMyIDUyIEwyMiAzNyBMMjkgMzIgTDQwIDQ0IFoiIGZpbGw9IiM5ZmJmZDAiLz4KICA8cGF0aCBkPSJNMTIgMzIgTDI3IDIyIEwzMiAyOSBMMjAgNDAgWiIgZmlsbD0iIzdmYTdiZCIvPgogIDxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjciIGZpbGw9IiNmN2Y5ZmIiLz4KICA8Y2lyY2xlIGN4PSIyNiIgY3k9IjU0IiByPSIyLjQiIGZpbGw9IiNkOTRiNGIiLz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjU2IiByPSIyLjQiIGZpbGw9IiM1NmE0NmMiLz4KICA8Y2lyY2xlIGN4PSIzOCIgY3k9IjU0IiByPSIyLjQiIGZpbGw9IiM0Yzc4YzciLz4KPC9zdmc+"
   />
+
   <style>
     :root {
       --page: #f7f9fb;
@@ -29,7 +31,9 @@
       --radius: 9px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     html {
       scroll-behavior: smooth;
@@ -54,7 +58,9 @@
       text-underline-offset: 3px;
     }
 
-    a:hover { color: var(--accent-strong); }
+    a:hover {
+      color: var(--accent-strong);
+    }
 
     .container {
       width: min(var(--max-width), calc(100% - 40px));
@@ -100,7 +106,9 @@
       text-decoration: none;
     }
 
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover {
+      color: var(--text);
+    }
 
     .hero {
       padding: 86px 0 68px;
@@ -115,11 +123,11 @@
       gap: 58px;
       align-items: center;
     }
-    
+
     .hero-copy {
       min-width: 0;
     }
-    
+
     .hero-photo {
       display: block;
       width: 220px;
@@ -140,7 +148,12 @@
       text-transform: uppercase;
     }
 
-    h1, h2, h3, p { margin-top: 0; }
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
 
     h1 {
       margin-bottom: 18px;
@@ -194,14 +207,18 @@
       content: "";
     }
 
-    main { padding-bottom: 54px; }
+    main {
+      padding-bottom: 54px;
+    }
 
     .section {
       padding: 64px 0;
       border-bottom: 1px solid var(--line);
     }
 
-    .section:last-of-type { border-bottom: 0; }
+    .section:last-of-type {
+      border-bottom: 0;
+    }
 
     .section-heading {
       display: grid;
@@ -226,16 +243,21 @@
       line-height: 1.55;
     }
 
-    .section-body { min-width: 0; }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 34px;
-      align-items: start;
+    .section-body {
+      min-width: 0;
     }
 
-    .intro-copy p:last-child { margin-bottom: 0; }
+    .intro-grid {
+      display: block;
+    }
+
+    .intro-copy {
+      max-width: 860px;
+    }
+
+    .intro-copy p:last-child {
+      margin-bottom: 0;
+    }
 
     .direction-note {
       margin-top: 24px;
@@ -257,29 +279,24 @@
       font-size: 15px;
     }
 
-    .interest-list,
-    .skill-list,
-    .fact-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
+    .interest-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px 12px;
+      margin: 18px 0 26px;
     }
 
-    .interest-list li,
-    .skill-list li {
-      padding: 10px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .interest-list li:first-child,
-    .skill-list li:first-child {
-      padding-top: 0;
-    }
-
-    .interest-list li:last-child,
-    .skill-list li:last-child {
-      border-bottom: 0;
-      padding-bottom: 0;
+    .interest-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 13px;
+      color: var(--accent-strong);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 14px;
+      line-height: 1.35;
+      white-space: nowrap;
     }
 
     .entry-list {
@@ -336,48 +353,9 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px 16px;
-      margin-top: 14px;
+      margin: 0 0 14px;
       font-size: 14px;
       font-weight: 650;
-    }
-
-    .featured {
-      padding: 28px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-left: 4px solid var(--accent);
-      border-radius: var(--radius);
-    }
-
-    .featured h3 {
-      margin-bottom: 5px;
-      font-size: 23px;
-      line-height: 1.35;
-    }
-
-    .featured .entry-meta { margin-bottom: 17px; }
-
-    .featured-grid {
-      display: grid;
-      grid-template-columns: 1fr 0.8fr;
-      gap: 34px;
-      align-items: start;
-    }
-
-    .fact-list { border-top: 1px solid var(--line); }
-
-    .fact-list li {
-      padding: 10px 0;
-      border-bottom: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .fact-list strong {
-      display: block;
-      margin-bottom: 2px;
-      color: var(--text);
-      font-weight: 680;
     }
 
     .compact-grid {
@@ -391,7 +369,9 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .compact-entry:nth-last-child(-n + 2) { border-bottom: 0; }
+    .compact-entry:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
 
     .compact-entry h3 {
       margin: 0 0 3px;
@@ -435,6 +415,26 @@
       gap: 30px;
     }
 
+    .skill-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skill-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .skill-list li:first-child {
+      padding-top: 0;
+    }
+
+    .skill-list li:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
     .contact-copy {
       max-width: 760px;
       margin-bottom: 15px;
@@ -459,41 +459,49 @@
         padding: 15px 0;
       }
 
-      .nav-links { gap: 9px 14px; }
+      .nav-links {
+        gap: 9px 14px;
+      }
 
-      .hero { padding: 64px 0 54px; }
+      .hero {
+        padding: 64px 0 54px;
+      }
 
       .hero-inner {
         grid-template-columns: 1fr;
         gap: 28px;
       }
-      
+
       .hero-photo {
         width: 160px;
         justify-self: start;
-      }  
+      }
 
       .section-heading {
         grid-template-columns: 1fr;
         gap: 24px;
       }
 
-      .section-kicker { max-width: 620px; }
+      .section-kicker {
+        max-width: 620px;
+      }
 
-      .intro-grid,
-      .featured-grid,
       .education-grid,
       .skills-grid {
         grid-template-columns: 1fr;
       }
 
-      .compact-grid { grid-template-columns: 1fr; }
+      .compact-grid {
+        grid-template-columns: 1fr;
+      }
 
       .compact-entry:nth-last-child(-n + 2) {
         border-bottom: 1px solid var(--line);
       }
 
-      .compact-entry:last-child { border-bottom: 0; }
+      .compact-entry:last-child {
+        border-bottom: 0;
+      }
     }
 
     @media (max-width: 620px) {
@@ -501,25 +509,35 @@
         width: min(100% - 28px, var(--max-width));
       }
 
-      .nav { display: block; }
+      .nav {
+        display: block;
+      }
 
       .nav-links {
         margin-top: 9px;
         justify-content: flex-start;
       }
 
-      .hero { padding-top: 52px; }
+      .hero {
+        padding-top: 52px;
+      }
 
-      .section { padding: 48px 0; }
+      .section {
+        padding: 48px 0;
+      }
 
       .entry {
         grid-template-columns: 1fr;
         gap: 8px;
       }
 
-      .entry-date { text-align: left; }
+      .entry-date {
+        text-align: left;
+      }
 
-      .featured { padding: 22px; }
+      .interest-pill {
+        white-space: normal;
+      }
     }
   </style>
 </head>
@@ -528,12 +546,14 @@
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="#top">Daerhan Jianati</a>
+
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#research">Research</a>
         <a href="#robotics">Robotics</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -548,19 +568,19 @@
         width="220"
         height="275"
       />
-    
+
       <div class="hero-copy">
         <p class="status">
           Incoming M.S. Student · University of Illinois Urbana-Champaign
         </p>
-    
+
         <h1>Daerhan Jianati</h1>
-    
+
         <p class="hero-lead">
           I am interested in computational imaging, multispectral sensing,
           and computer vision.
         </p>
-    
+
         <p class="hero-detail">
           My strongest current research experience is in RGB–active NIR fusion,
           with additional work in RGB–hyperspectral imaging and real-robot
@@ -569,9 +589,9 @@
           perceptual data can help imaging systems better represent visual
           appearance.
         </p>
-    
+
         <div class="hero-links" aria-label="Profile links">
-          <a href="mailto:daerhan2@illinois.edu">Email</a>
+          <a href="mailto:daerhan2@illinois.edu">Email: daerhan2@illinois.edu</a>
           <a href="Daerhan_Jianati_CV.pdf">CV</a>
           <a href="https://github.com/Darhan7">GitHub</a>
           <a href="https://darhan7.github.io/go2-multifloor-guide-nav/">
@@ -587,37 +607,53 @@
       <div class="section-heading">
         <div>
           <h2>About</h2>
-          <p class="section-kicker">Background, current experience, and longer-term direction.</p>
+          <p class="section-kicker">
+            Background, current experience, and longer-term direction.
+          </p>
         </div>
 
         <div class="section-body intro-grid">
           <div class="intro-copy">
             <p>
-              I will begin the M.S. in Information Management program at the University of Illinois Urbana-Champaign in August 2026. I received my B.S. in Electronic Information Science &amp; Technology from Nanjing University.
+              I will begin the M.S. in Information Management program at the
+              University of Illinois Urbana-Champaign in August 2026. I received
+              my B.S. in Electronic Information Science &amp; Technology from
+              Nanjing University.
             </p>
+
             <p>
-              My recent work has centered on multimodal sensing and computer vision. I have worked most extensively on self-supervised RGB–active NIR fusion, and I have also gained experience with RGB–hyperspectral fusion, sensor calibration, sparse LiDAR supervision, and robotic navigation.
+              My research interests include
+              <strong>computational imaging</strong>,
+              <strong>multispectral and spectral imaging</strong>,
+              <strong>statistical image reconstruction</strong>,
+              <strong>multimodal sensing and perception</strong>,
+              <strong>human-perception-informed imaging</strong>, and
+              <strong>sensor calibration for real imaging systems</strong>.
+              My recent work has centered on multimodal sensing and computer
+              vision, with the most extensive experience in self-supervised
+              RGB–active NIR fusion, as well as additional work in
+              RGB–hyperspectral fusion, sparse LiDAR supervision, and robotic
+              navigation.
             </p>
+
             <p>
-              I am particularly interested in research that connects real imaging systems with computational reconstruction: understanding how sensors measure the physical world, how statistical or learned priors compensate for incomplete measurements, and how reconstructed images relate to human visual perception.
+              I am particularly interested in research that connects real
+              imaging systems with computational reconstruction: understanding
+              how sensors measure the physical world, how statistical or learned
+              priors compensate for incomplete measurements, and how
+              reconstructed images relate to human visual perception.
             </p>
 
             <div class="direction-note">
               <strong>Long-term research direction</strong>
               <p>
-                I am interested in combining physical imaging models, spectral representations, statistical learning, and carefully collected human perceptual data to study perceptually equivalent image reconstruction and the limitations of conventional cameras.
+                I am interested in combining physical imaging models, spectral
+                representations, statistical learning, and carefully collected
+                human perceptual data to study perceptually equivalent image
+                reconstruction and the limitations of conventional cameras.
               </p>
             </div>
           </div>
-
-          <ul class="interest-list" aria-label="Research interests">
-            <li>Computational imaging</li>
-            <li>Multispectral and spectral imaging</li>
-            <li>Statistical image reconstruction</li>
-            <li>Multimodal sensing and perception</li>
-            <li>Human-perception-informed imaging</li>
-            <li>Sensor calibration and real imaging systems</li>
-          </ul>
         </div>
       </div>
     </section>
@@ -626,43 +662,65 @@
       <div class="section-heading">
         <div>
           <h2>Selected Research</h2>
-          <p class="section-kicker">The projects in which I have developed the strongest relevant experience.</p>
+          <p class="section-kicker">
+            The projects in which I have developed the strongest relevant experience.
+          </p>
         </div>
 
         <div class="section-body entry-list">
           <article class="entry">
             <div>
-              <h3>Self-Supervised RGB–Active NIR Fusion for Geometric Perception</h3>
-              <p class="entry-meta">First-author research</p>
+              <h3>Self-Supervised RGB–Active NIR Fusion for Visual Perception</h3>
+              <p class="entry-meta">
+                Project Lead and First Author · Advisor: G. Lu
+              </p>
+
               <ul>
                 <li>
-                  Developed a lightweight single-channel fusion framework for pixel-aligned RGB and active NIR using pixel-wise mixing, stereo reprojection, and an exposure-aware reliability gate.
+                  Developed a lightweight single-channel fusion framework for
+                  pixel-aligned RGB and active NIR using pixel-wise mixing,
+                  stereo reprojection, and an exposure-aware reliability gate.
                 </li>
                 <li>
-                  Evaluated the representation on detection, stereo depth, feature matching, SfM, SLAM diagnostics, and efficiency, reaching 79.36 FPS with 560 MB peak memory.
+                  Evaluated the fused representation across five downstream
+                  tasks—object detection, stereo depth estimation, feature
+                  matching, Structure from Motion (SfM), and Simultaneous
+                  Localization and Mapping (SLAM). The model runs at 79.36 FPS
+                  with 560 MB peak memory.
                 </li>
                 <li>
-                  I am revising and extending the study through stronger training and evaluation, calibration-robust analysis, internal ablations, and challenging-illumination experiments.
+                  Currently extending the study with expanded training and
+                  evaluation protocols, robustness analysis under calibration
+                  perturbations, ablation studies, and experiments under
+                  challenging illumination conditions.
                 </li>
               </ul>
             </div>
+
             <div class="entry-date">Nov. 2025–Present</div>
           </article>
 
           <article class="entry">
             <div>
               <h3>Per-Pixel Illumination Estimation from HR-RGB and LR-HSI</h3>
-              <p class="entry-meta">CITE Lab, Nanjing University</p>
+              <p class="entry-meta">
+                Student Researcher, CITE Lab, Nanjing University
+              </p>
+
               <ul>
                 <li>
-                  Developed a multi-sensor pipeline combining high-resolution RGB and low-resolution hyperspectral measurements for per-pixel illumination estimation.
+                  Developed a multi-sensor pipeline combining high-resolution
+                  RGB and low-resolution hyperspectral measurements for
+                  per-pixel illumination estimation.
                 </li>
                 <li>
-                  Reproduced baseline results and evaluated robustness across multiple spatial downsampling scales and fusion settings.
+                  Reproduced baseline results and evaluated robustness across
+                  multiple spatial downsampling scales and fusion settings.
                 </li>
               </ul>
             </div>
-            <div class="entry-date">Jun.–Oct. 2025</div>
+
+            <div class="entry-date">Jun. 2025–Oct. 2025</div>
           </article>
         </div>
       </div>
@@ -671,45 +729,54 @@
     <section class="section" id="robotics">
       <div class="section-heading">
         <div>
-          <h2>Robotics System</h2>
-          <p class="section-kicker">A featured open-source engineering project involving real sensors and robot deployment.</p>
+          <h2>Robotics Experience</h2>
+          <p class="section-kicker">
+            Open-source robotics and real-system integration.
+          </p>
         </div>
 
-        <div class="section-body featured">
-          <div class="featured-grid">
+        <div class="section-body entry-list">
+          <article class="entry">
             <div>
               <h3>Unitree Go2 Multi-Floor Guide Navigation</h3>
+
               <p class="entry-meta">
-                Research Assistant, Human-Computer Interaction Lab, Nanjing University · 2026
+                Research Assistant, Human-Computer Interaction Lab, Nanjing University
               </p>
+
+              <div class="entry-links">
+                <a href="https://github.com/Darhan7/go2-multifloor-guide-nav">
+                  GitHub Repository
+                </a>
+                <a href="https://darhan7.github.io/go2-multifloor-guide-nav/">
+                  Documentation Website
+                </a>
+              </div>
+
               <p>
-                An indoor guide-robot prototype built around a Unitree Go2 EDU, ROS 2 Foxy, Nav2, and the robot's existing sensing and motion interfaces.
+                Built an indoor guide-robot prototype around a Unitree Go2 EDU,
+                ROS 2, Nav2, and the robot's existing sensing and motion interfaces.
               </p>
+
               <ul>
                 <li>
-                  Integrated point-cloud processing, 2D mapping, AMCL localization, global planning, path following, and Unitree motion bridging.
+                  Integrated LiDAR processing, 2D mapping, localization, global
+                  planning, path following, and Unitree motion-command integration.
                 </li>
                 <li>
-                  Built a semantic navigation layer with named destinations, robot-safe anchors, multi-floor map organization, planner validation, and a human-assisted elevator workflow.
+                  Developed semantic destinations, robot-safe navigation anchors,
+                  multi-floor map organization, planner-validation tools, and a
+                  human-assisted elevator workflow.
                 </li>
                 <li>
-                  Published bilingual documentation, configurations, maps, scripts, and debugging notes as an open-source engineering archive.
+                  Open-sourced bilingual documentation, maps, configurations,
+                  scripts, and debugging procedures.
                 </li>
               </ul>
-              <div class="entry-links">
-                <a href="https://github.com/Darhan7/go2-multifloor-guide-nav">GitHub Repository</a>
-                <a href="https://darhan7.github.io/go2-multifloor-guide-nav/">Documentation Website</a>
-              </div>
             </div>
 
-            <ul class="fact-list" aria-label="Go2 project technical summary">
-              <li><strong>Robot</strong>Unitree Go2 EDU</li>
-              <li><strong>Navigation</strong>ROS 2 Foxy · Nav2 · AMCL · SLAM Toolbox</li>
-              <li><strong>Sensing</strong>LiDAR point clouds · LaserScan · TF</li>
-              <li><strong>System layer</strong>Semantic anchors · floor graph · route preview</li>
-              <li><strong>Public output</strong>Code · maps · configuration · bilingual documentation</li>
-            </ul>
-          </div>
+            <div class="entry-date">Apr. 2026–Jul. 2026</div>
+          </article>
         </div>
       </div>
     </section>
@@ -718,45 +785,60 @@
       <div class="section-heading">
         <div>
           <h2>Additional Experience</h2>
-          <p class="section-kicker">Exploratory research, engineering, internship, and course projects.</p>
+          <p class="section-kicker">
+            Exploratory research, engineering, internship, and course projects.
+          </p>
         </div>
 
         <div class="section-body compact-grid">
           <article class="compact-entry">
             <h3>Exploratory RGB/NIR/Polarization Depth Estimation</h3>
             <p class="compact-meta">
-              Multimodal fusion, custom losses, knowledge distillation, calibration, and sparse LiDAR supervision · Aug.–Oct. 2025
+              Multimodal fusion, custom losses, knowledge distillation,
+              calibration, and sparse LiDAR supervision · Aug. 2025–Oct. 2025
             </p>
           </article>
 
           <article class="compact-entry">
             <h3>3D Dynamic Heart Reconstruction from 2D Medical Imaging</h3>
-            <p class="compact-meta">Project Lead, Course Project · Feb.–May 2025</p>
+            <p class="compact-meta">
+              Project Lead, Course Project · Feb. 2025–May 2025
+            </p>
           </article>
 
           <article class="compact-entry">
             <h3>Reservoir-Computing-Transistor-Based Fall Detection</h3>
-            <p class="compact-meta">National Undergraduate Innovation Program · Nov. 2023–Dec. 2024</p>
+            <p class="compact-meta">
+              National Undergraduate Innovation Program · Nov. 2023–Dec. 2024
+            </p>
           </article>
 
           <article class="compact-entry">
             <h3>Quantum Implementation of Finite Element Analysis</h3>
-            <p class="compact-meta">Exchange Project, North Carolina State University · Jan.–Feb. 2025</p>
+            <p class="compact-meta">
+              Exchange Project, North Carolina State University · Jan. 2025–Feb. 2025
+            </p>
           </article>
 
           <article class="compact-entry">
             <h3>Intelligent Risk Butler: Exchange-Rate Risk Inspection System</h3>
-            <p class="compact-meta">Core Member, 20th Citi Cup · Jan.–Jun. 2025</p>
+            <p class="compact-meta">
+              Core Member, 20th Citi Cup · Jan. 2025–Jun. 2025
+            </p>
           </article>
 
           <article class="compact-entry">
             <h3>Environmental Sensor Data Analysis</h3>
-            <p class="compact-meta">Data Analysis Intern, Shihezi University · Jul.–Sep. 2024</p>
+            <p class="compact-meta">
+              Data Analysis Intern, Shihezi University · Jul. 2024–Sep. 2024
+            </p>
           </article>
 
           <article class="compact-entry">
             <h3>Patent: Elderly Fall Detection Based on Reservoir Computing Transistors</h3>
-            <p class="compact-meta">Fifth Inventor · Application No. CN202411352818.X · Jan. 2025</p>
+            <p class="compact-meta">
+              Fifth Inventor · Application No. CN202411352818.X · Jan. 2025
+            </p>
           </article>
         </div>
       </div>
@@ -766,21 +848,29 @@
       <div class="section-heading">
         <div>
           <h2>Education</h2>
-          <p class="section-kicker">Academic background and honors.</p>
+          <p class="section-kicker">
+            Academic background and honors.
+          </p>
         </div>
 
         <div class="section-body education-grid">
           <article class="education-item">
             <h3>University of Illinois Urbana-Champaign</h3>
             <p>School of Information Sciences</p>
-            <p>Incoming M.S. in Information Management · Aug. 2026</p>
+            <p>M.S. in Information Management · Aug. 2026–May 2028</p>
           </article>
 
           <article class="education-item">
             <h3>Nanjing University</h3>
             <p>School of Electronic Science and Engineering</p>
-            <p>B.S. in Electronic Information Science &amp; Technology · 2022–2026</p>
-            <p>Ethnic Minority Students' Pomegranate Seed Scholarship · 2024, 2025</p>
+            <p>
+              B.S. in Electronic Information Science &amp; Technology ·
+              Sep. 2022–Jun. 2026
+            </p>
+            <p>
+              Ethnic Minority Students' Pomegranate Seed Scholarship ·
+              2024, 2025
+            </p>
           </article>
         </div>
       </div>
@@ -790,20 +880,39 @@
       <div class="section-heading">
         <div>
           <h2>Technical Skills</h2>
-          <p class="section-kicker">Methods and tools used across research projects.</p>
+          <p class="section-kicker">
+            Methods and tools used across research projects.
+          </p>
         </div>
 
         <div class="section-body skills-grid">
           <ul class="skill-list">
-            <li><strong>Programming:</strong> Python, C, MATLAB, Arduino</li>
-            <li><strong>Imaging and vision:</strong> multimodal fusion, depth estimation, illumination estimation, sensor calibration, geometric evaluation</li>
-            <li><strong>Sensors and data:</strong> RGB, active NIR, hyperspectral, polarization, LiDAR</li>
+            <li>
+              <strong>Programming:</strong> Python, C, MATLAB
+            </li>
+            <li>
+              <strong>Libraries:</strong> PyTorch, OpenCV, NumPy
+            </li>
+            <li>
+              <strong>Imaging and vision:</strong> multimodal fusion, object
+              detection, stereo depth estimation, feature matching,
+              SfM/SLAM evaluation, illumination estimation, sensor calibration
+            </li>
           </ul>
 
           <ul class="skill-list">
-            <li><strong>Robotics:</strong> ROS 2, Nav2, AMCL, SLAM Toolbox, CycloneDDS, Unitree SDK 2</li>
-            <li><strong>Tools:</strong> Linux, Git, LaTeX, VMware</li>
-            <li><strong>Open source:</strong> technical documentation, reproducible configuration, project websites</li>
+            <li>
+              <strong>Robotics:</strong> ROS 2, robotic navigation, SLAM,
+              Unitree Go2
+            </li>
+            <li>
+              <strong>Sensing modalities:</strong> RGB, active NIR,
+              hyperspectral, polarization, LiDAR
+            </li>
+            <li>
+              <strong>Tools and platforms:</strong> Linux, Git, LaTeX,
+              Arduino, VMware
+            </li>
           </ul>
         </div>
       </div>
@@ -813,15 +922,24 @@
       <div class="section-heading">
         <div>
           <h2>Contact</h2>
-          <p class="section-kicker">Research and collaboration inquiries.</p>
+          <p class="section-kicker">
+            Research and collaboration inquiries.
+          </p>
         </div>
 
         <div class="section-body">
           <p class="contact-copy">
-            I am currently interested in UIUC research opportunities involving computational imaging, multispectral sensing, optical or camera systems, sensor calibration, image reconstruction, and related machine-learning work.
+            I am currently interested in UIUC research opportunities involving
+            computational imaging, multispectral sensing, optical or camera
+            systems, sensor calibration, image reconstruction, and related
+            machine-learning work.
           </p>
+
           <p class="contact-line">
-            Email: <a href="mailto:daerhan2@illinois.edu">daerhan2@illinois.edu</a>
+            Email:
+            <a href="mailto:daerhan2@illinois.edu">
+              daerhan2@illinois.edu
+            </a>
           </p>
         </div>
       </div>
@@ -829,7 +947,9 @@
   </main>
 
   <footer class="footer">
-    <div class="container">© 2026 Daerhan Jianati · Last updated July 2026</div>
+    <div class="container">
+      © 2026 Daerhan Jianati · Last updated August 2026
+    </div>
   </footer>
 </body>
 </html>
