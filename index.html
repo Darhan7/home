@@ -111,7 +111,7 @@
     .hero-inner {
       max-width: var(--max-width);
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 220px;
+      grid-template-columns: 220px minmax(0, 1fr);
       gap: 58px;
       align-items: center;
     }
@@ -465,13 +465,13 @@
 
       .hero-inner {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 28px;
       }
       
       .hero-photo {
         width: 160px;
-        order: -1;
-      }      
+        justify-self: start;
+      }  
 
       .section-heading {
         grid-template-columns: 1fr;
@@ -541,6 +541,14 @@
 
   <section class="hero" id="top">
     <div class="container hero-inner">
+      <img
+        class="hero-photo"
+        src="assets/daerhan.jpg"
+        alt="Portrait of Daerhan Jianati"
+        width="220"
+        height="275"
+      />
+    
       <div class="hero-copy">
         <p class="status">
           Incoming M.S. Student · University of Illinois Urbana-Champaign
@@ -571,14 +579,6 @@
           </a>
         </div>
       </div>
-    
-      <img
-        class="hero-photo"
-        src="assets/daerhan.jpg"
-        alt="Portrait of Daerhan Jianati"
-        width="220"
-        height="275"
-      />
     </div>
   </section>
 
