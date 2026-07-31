@@ -3,533 +3,774 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Daerhan Jianati — computational imaging, multispectral sensing, multimodal perception, and robotic systems."
+  />
   <title>Daerhan Jianati | Personal Homepage</title>
+
   <style>
     :root {
-      --bg: #0b1020;
-      --bg-soft: #121a31;
-      --card: rgba(255,255,255,0.08);
-      --card-border: rgba(255,255,255,0.12);
-      --text: #e9eefc;
-      --muted: #b8c1de;
-      --accent: #7cc7ff;
-      --accent-2: #9ef0c8;
-      --shadow: 0 18px 60px rgba(0,0,0,0.28);
-      --maxw: 1080px;
+      --page: #f7f9fb;
+      --surface: #ffffff;
+      --surface-soft: #eef3f6;
+      --text: #17212b;
+      --muted: #5f6d79;
+      --line: #d8e0e6;
+      --accent: #245b78;
+      --accent-strong: #173e54;
+      --accent-soft: #e7f0f5;
+      --warm: #9a4b27;
+      --max-width: 1040px;
+      --radius: 9px;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(124,199,255,0.18), transparent 28%),
-        radial-gradient(circle at top right, rgba(158,240,200,0.12), transparent 24%),
-        linear-gradient(180deg, #0b1020 0%, #0e1530 48%, #0a1020 100%);
-      color: var(--text);
-      line-height: 1.65;
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 82px;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--page);
+      font-family:
+        Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover { color: var(--accent-strong); }
 
     .container {
-      width: min(var(--maxw), calc(100% - 32px));
+      width: min(var(--max-width), calc(100% - 40px));
       margin: 0 auto;
     }
 
-    .nav {
+    .site-header {
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(14px);
-      background: rgba(9, 14, 29, 0.72);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(247, 249, 251, 0.96);
+      border-bottom: 1px solid var(--line);
     }
 
-    .nav-inner {
+    .nav {
+      min-height: 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      padding: 14px 0;
+      gap: 28px;
     }
 
     .brand {
-      font-weight: 700;
-      letter-spacing: 0.2px;
+      color: var(--text);
+      font-size: 17px;
+      font-weight: 720;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
+      align-items: center;
+      justify-content: flex-end;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 22px;
       font-size: 14px;
     }
 
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
     .hero {
-      padding: 72px 0 36px;
+      padding: 86px 0 68px;
+      background: linear-gradient(180deg, #ffffff 0%, #f7f9fb 100%);
+      border-bottom: 1px solid var(--line);
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 24px;
-      align-items: stretch;
+    .hero-inner { max-width: 880px; }
+
+    .status {
+      margin: 0 0 14px;
+      color: var(--warm);
+      font-size: 14px;
+      font-weight: 680;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
     }
 
-    .panel {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-main {
-      padding: 34px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(124,199,255,0.12);
-      color: #d9f1ff;
-      font-size: 13px;
-      margin-bottom: 18px;
-    }
+    h1, h2, h3, p { margin-top: 0; }
 
     h1 {
-      margin: 0 0 12px;
-      font-size: clamp(34px, 6vw, 56px);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
+      margin-bottom: 18px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(43px, 7vw, 67px);
+      font-weight: 600;
+      line-height: 1.06;
+      letter-spacing: -0.035em;
     }
 
-    .subtitle {
-      margin: 0;
+    .hero-lead {
+      max-width: 810px;
+      margin-bottom: 13px;
+      color: #2a3944;
+      font-size: clamp(19px, 2.5vw, 24px);
+      line-height: 1.48;
+    }
+
+    .hero-detail {
+      max-width: 820px;
+      margin-bottom: 0;
       color: var(--muted);
-      font-size: 18px;
-      max-width: 720px;
+      font-size: 17px;
     }
 
-    .hero-actions {
+    .hero-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 24px;
+      gap: 10px 18px;
+      margin-top: 30px;
     }
 
-    .btn {
+    .hero-links a {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 16px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.06);
-      color: var(--text);
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 0.18s ease, background 0.18s ease;
-    }
-
-    .btn:hover {
-      background: rgba(255,255,255,0.11);
-      transform: translateY(-1px);
+      gap: 7px;
+      color: var(--accent-strong);
+      font-size: 15px;
+      font-weight: 650;
       text-decoration: none;
     }
 
-    .btn.primary {
-      background: linear-gradient(135deg, rgba(124,199,255,0.25), rgba(158,240,200,0.18));
-      border-color: rgba(124,199,255,0.28);
-    }
-
-    .hero-side {
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .metric {
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .metric .label {
+    .hero-links a::after {
+      content: "↗";
       font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 6px;
+      font-weight: 500;
     }
 
-    .metric .value {
-      font-size: 20px;
-      font-weight: 700;
+    .hero-links a[href^="mailto:"]::after,
+    .hero-links a[href$=".pdf"]::after {
+      content: "";
     }
+
+    main { padding-bottom: 54px; }
 
     .section {
-      padding: 18px 0 8px;
+      padding: 64px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section:last-of-type { border-bottom: 0; }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 34px;
+      align-items: start;
     }
 
     .section h2 {
-      font-size: 28px;
-      margin: 0 0 14px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.2;
       letter-spacing: -0.02em;
     }
 
-    .section-intro {
-      color: var(--muted);
-      max-width: 820px;
-      margin-bottom: 20px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .card {
-      padding: 24px;
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 22px;
-      box-shadow: var(--shadow);
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .tag {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #dfe7ff;
-      font-size: 13px;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 16px;
-    }
-
-    .item {
-      padding: 20px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .item-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 8px;
-    }
-
-    .item-title {
-      font-weight: 700;
-      font-size: 18px;
-    }
-
-    .item-subtitle {
+    .section-kicker {
+      margin: 8px 0 0;
       color: var(--muted);
       font-size: 14px;
-      margin-top: 4px;
+      line-height: 1.55;
     }
 
-    .item-date {
-      white-space: nowrap;
-      color: var(--accent-2);
-      font-size: 13px;
-      font-weight: 600;
-    }
+    .section-body { min-width: 0; }
 
-    ul {
-      margin: 10px 0 0 18px;
-      padding: 0;
-    }
-
-    li { margin: 8px 0; color: #dde5ff; }
-
-    .contact-list {
+    .intro-grid {
       display: grid;
-      gap: 12px;
-      margin-top: 12px;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 34px;
+      align-items: start;
     }
 
-    .contact-row {
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
+    .intro-copy p:last-child { margin-bottom: 0; }
+
+    .direction-note {
+      margin-top: 24px;
+      padding: 18px 20px;
+      background: var(--surface-soft);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .direction-note strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 15px;
+    }
+
+    .direction-note p {
+      margin: 0;
+      color: #465560;
+      font-size: 15px;
+    }
+
+    .interest-list,
+    .skill-list,
+    .fact-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .interest-list li,
+    .skill-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .interest-list li:first-child,
+    .skill-list li:first-child {
+      padding-top: 0;
+    }
+
+    .interest-list li:last-child,
+    .skill-list li:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .entry-list {
+      display: grid;
+      gap: 0;
+    }
+
+    .entry {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 150px;
+      gap: 26px;
+      padding: 0 0 30px;
+      margin: 0 0 30px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .entry:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .entry h3 {
+      margin: 0 0 4px;
+      font-size: 20px;
+      line-height: 1.34;
+      letter-spacing: -0.012em;
+    }
+
+    .entry-meta {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .entry-date {
+      color: var(--muted);
+      font-size: 14px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .entry ul {
+      margin: 0;
+      padding-left: 19px;
+    }
+
+    .entry li {
+      margin: 6px 0;
+      padding-left: 3px;
+    }
+
+    .entry-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      margin-top: 14px;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .featured {
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius);
+    }
+
+    .featured h3 {
+      margin-bottom: 5px;
+      font-size: 23px;
+      line-height: 1.35;
+    }
+
+    .featured .entry-meta { margin-bottom: 17px; }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .fact-list { border-top: 1px solid var(--line); }
+
+    .fact-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .fact-list strong {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--text);
+      font-weight: 680;
+    }
+
+    .compact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 32px;
+    }
+
+    .compact-entry {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .compact-entry:nth-last-child(-n + 2) { border-bottom: 0; }
+
+    .compact-entry h3 {
+      margin: 0 0 3px;
+      font-size: 16px;
+      line-height: 1.42;
+    }
+
+    .compact-meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+
+    .education-item {
+      padding-top: 18px;
+      border-top: 3px solid var(--accent-soft);
+    }
+
+    .education-item h3 {
+      margin-bottom: 4px;
+      font-size: 18px;
+      line-height: 1.42;
+    }
+
+    .education-item p {
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .contact-copy {
+      max-width: 760px;
+      margin-bottom: 15px;
+      color: #465560;
+    }
+
+    .contact-line {
+      margin: 0;
+      font-size: 17px;
     }
 
     .footer {
-      padding: 34px 0 52px;
+      padding: 28px 0 46px;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
+      border-top: 1px solid var(--line);
     }
 
-    @media (max-width: 900px) {
-      .hero-grid, .grid-2 {
+    @media (max-width: 820px) {
+      .nav {
+        align-items: flex-start;
+        padding: 15px 0;
+      }
+
+      .nav-links { gap: 9px 14px; }
+
+      .hero { padding: 64px 0 54px; }
+
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .section-kicker { max-width: 620px; }
+
+      .intro-grid,
+      .featured-grid,
+      .education-grid,
+      .skills-grid {
         grid-template-columns: 1fr;
       }
-      .hero {
-        padding-top: 40px;
+
+      .compact-grid { grid-template-columns: 1fr; }
+
+      .compact-entry:nth-last-child(-n + 2) {
+        border-bottom: 1px solid var(--line);
       }
-      .hero-main, .hero-side, .card {
-        padding: 22px;
+
+      .compact-entry:last-child { border-bottom: 0; }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(100% - 28px, var(--max-width));
       }
-      .item-head {
-        flex-direction: column;
+
+      .nav { display: block; }
+
+      .nav-links {
+        margin-top: 9px;
+        justify-content: flex-start;
       }
-      .item-date {
-        white-space: normal;
+
+      .hero { padding-top: 52px; }
+
+      .section { padding: 48px 0; }
+
+      .entry {
+        grid-template-columns: 1fr;
+        gap: 8px;
       }
+
+      .entry-date { text-align: left; }
+
+      .featured { padding: 22px; }
     }
   </style>
 </head>
+
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <div class="brand">Daerhan Jianati</div>
-      <div class="nav-links">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">Daerhan Jianati</a>
+      <nav class="nav-links" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#research">Research</a>
+        <a href="#robotics">Robotics</a>
         <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <header class="hero">
-    <div class="container hero-grid">
-      <section class="panel hero-main">
-        <div class="eyebrow">Electronic Information Science &amp; Technology · NJU</div>
-        <h1>Building multimodal vision systems for geometry, perception, and sensing.</h1>
-        <p class="subtitle">
-          I am <strong>Daerhan Jianati</strong>, an undergraduate student at <strong>Nanjing University</strong>.
-          My recent work focuses on <strong>RGB–active NIR fusion</strong>, <strong>depth estimation</strong>,
-          <strong>self-supervised learning</strong>, and <strong>multimodal perception</strong> for geometry-oriented vision.
-        </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="mailto:darhanjanat@smail.nju.edu.cn">Email Me</a>
-          <a class="btn" href="#research">View Research</a>
-        </div>
-      </section>
-
-      <aside class="panel hero-side">
-        <div class="metric">
-          <div class="label">Current Role</div>
-          <div class="value">B.S. Student, NJU</div>
-        </div>
-        <div class="metric">
-          <div class="label">Core Interests</div>
-          <div class="value">RGB/NIR Fusion · Depth · Geometry</div>
-        </div>
-        <div class="metric">
-          <div class="label">Tools</div>
-          <div class="value">Python · Matlab · Arduino · C</div>
-        </div>
-      </aside>
+      </nav>
     </div>
   </header>
 
+  <section class="hero" id="top">
+    <div class="container hero-inner">
+      <p class="status">Incoming M.S. Student · University of Illinois Urbana-Champaign</p>
+      <h1>Daerhan Jianati</h1>
+      <p class="hero-lead">
+        I am interested in computational imaging, multispectral sensing, and computer vision.
+      </p>
+      <p class="hero-detail">
+        My strongest current research experience is in RGB–active NIR fusion, with additional work in RGB–hyperspectral imaging and real-robot perception systems. In the longer term, I hope to study how physical imaging models, statistical priors, spectral information, and human perceptual data can help imaging systems better represent visual appearance.
+      </p>
+      <div class="hero-links" aria-label="Profile links">
+        <a href="mailto:daerhan2@illinois.edu">Email</a>
+        <a href="Daerhan_Jianati_CV.pdf">CV</a>
+        <a href="https://github.com/Darhan7">GitHub</a>
+        <a href="https://darhan7.github.io/go2-multifloor-guide-nav/">Go2 Project</a>
+      </div>
+    </div>
+  </section>
+
   <main class="container">
     <section class="section" id="about">
-      <h2>About</h2>
-      <div class="grid-2">
-        <div class="card">
-          <p>
-            I am currently pursuing a B.S. in Electronic Information Science &amp; Technology at the School of Electronic Science and Engineering, Nanjing University.
-            My work spans multimodal sensing, computer vision, and machine learning, with a particular interest in how diverse sensor signals can be fused to improve robustness and geometric understanding.
-          </p>
-          <p>
-            Beyond core research, I also enjoy building complete pipelines: data collection, calibration, model design, evaluation, and deployment-aware analysis.
-          </p>
+      <div class="section-heading">
+        <div>
+          <h2>About</h2>
+          <p class="section-kicker">Background, current experience, and longer-term direction.</p>
         </div>
-        <div class="card">
-          <strong>Research Interests</strong>
-          <div class="tags">
-            <span class="tag">Multimodal Fusion</span>
-            <span class="tag">RGB–NIR Vision</span>
-            <span class="tag">Depth Estimation</span>
-            <span class="tag">Self-Supervised Learning</span>
-            <span class="tag">Geometry-Oriented Vision</span>
-            <span class="tag">Sensor Calibration</span>
-            <span class="tag">Computational Imaging</span>
-            <span class="tag">Embodied Perception</span>
+
+        <div class="section-body intro-grid">
+          <div class="intro-copy">
+            <p>
+              I will begin the M.S. in Information Management program at the University of Illinois Urbana-Champaign in August 2026. I received my B.S. in Electronic Information Science &amp; Technology from Nanjing University.
+            </p>
+            <p>
+              My recent work has centered on multimodal sensing and computer vision. I have worked most extensively on self-supervised RGB–active NIR fusion, and I have also gained experience with RGB–hyperspectral fusion, sensor calibration, sparse LiDAR supervision, and robotic navigation.
+            </p>
+            <p>
+              I am particularly interested in research that connects real imaging systems with computational reconstruction: understanding how sensors measure the physical world, how statistical or learned priors compensate for incomplete measurements, and how reconstructed images relate to human visual perception.
+            </p>
+
+            <div class="direction-note">
+              <strong>Long-term research direction</strong>
+              <p>
+                I am interested in combining physical imaging models, spectral representations, statistical learning, and carefully collected human perceptual data to study perceptually equivalent image reconstruction and the limitations of conventional cameras.
+              </p>
+            </div>
           </div>
+
+          <ul class="interest-list" aria-label="Research interests">
+            <li>Computational imaging</li>
+            <li>Multispectral and spectral imaging</li>
+            <li>Statistical image reconstruction</li>
+            <li>Multimodal sensing and perception</li>
+            <li>Human-perception-informed imaging</li>
+            <li>Sensor calibration and real imaging systems</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section class="section" id="research">
-      <h2>Selected Research</h2>
-      <p class="section-intro">
-        My recent research explores how multimodal signals such as RGB, active NIR, polarization, LiDAR, and hyperspectral measurements can be combined to build more robust perception systems.
-      </p>
-      <div class="timeline">
-        <article class="item">
-          <div class="item-head">
-            <div>
-              <div class="item-title">Self-Supervised RGB–Active NIR Fusion for Geometry-Oriented Vision</div>
-              <div class="item-subtitle">First-author research</div>
-            </div>
-            <div class="item-date">Nov 2025 – Mar 2026</div>
-          </div>
-          <ul>
-            <li>Developed a self-supervised single-channel fusion framework for pixel-aligned RGB and active NIR inputs.</li>
-            <li>Designed pixel-wise mixing, stereo reprojection, and exposure-aware reliability gating for geometry-oriented representation learning.</li>
-            <li>Evaluated downstream performance on detection, stereo depth, SfM, SLAM, feature matching, and efficiency.</li>
-          </ul>
-        </article>
+      <div class="section-heading">
+        <div>
+          <h2>Selected Research</h2>
+          <p class="section-kicker">The projects in which I have developed the strongest relevant experience.</p>
+        </div>
 
-        <article class="item">
-          <div class="item-head">
+        <div class="section-body entry-list">
+          <article class="entry">
             <div>
-              <div class="item-title">Per-Pixel Illumination Estimation via Multi-Sensor Fusion</div>
-              <div class="item-subtitle">CITE Lab, Nanjing University</div>
+              <h3>Self-Supervised RGB–Active NIR Fusion for Geometric Perception</h3>
+              <p class="entry-meta">First-author research</p>
+              <ul>
+                <li>
+                  Developed a lightweight single-channel fusion framework for pixel-aligned RGB and active NIR using pixel-wise mixing, stereo reprojection, and an exposure-aware reliability gate.
+                </li>
+                <li>
+                  Evaluated the representation on detection, stereo depth, feature matching, SfM, SLAM diagnostics, and efficiency, reaching 79.36 FPS with 560 MB peak memory.
+                </li>
+                <li>
+                  I am revising and extending the study through stronger training and evaluation, calibration-robust analysis, internal ablations, and challenging-illumination experiments.
+                </li>
+              </ul>
             </div>
-            <div class="item-date">Jun 2025 – Oct 2025</div>
-          </div>
-          <ul>
-            <li>Built a multi-sensor fusion pipeline combining HR-RGB and LR-HSI for illumination estimation.</li>
-            <li>Reproduced baseline methods and benchmarked performance across multiple down-sampling settings.</li>
-          </ul>
-        </article>
+            <div class="entry-date">Nov. 2025–Present</div>
+          </article>
 
-        <article class="item">
-          <div class="item-head">
+          <article class="entry">
             <div>
-              <div class="item-title">Multimodal Information Fusion for Depth Estimation</div>
-              <div class="item-subtitle">RGB / NIR / Polarization</div>
+              <h3>Per-Pixel Illumination Estimation from HR-RGB and LR-HSI</h3>
+              <p class="entry-meta">CITE Lab, Nanjing University</p>
+              <ul>
+                <li>
+                  Developed a multi-sensor pipeline combining high-resolution RGB and low-resolution hyperspectral measurements for per-pixel illumination estimation.
+                </li>
+                <li>
+                  Reproduced baseline results and evaluated robustness across multiple spatial downsampling scales and fusion settings.
+                </li>
+              </ul>
             </div>
-            <div class="item-date">Aug 2025 – Oct 2025</div>
+            <div class="entry-date">Jun.–Oct. 2025</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="robotics">
+      <div class="section-heading">
+        <div>
+          <h2>Robotics System</h2>
+          <p class="section-kicker">A featured open-source engineering project involving real sensors and robot deployment.</p>
+        </div>
+
+        <div class="section-body featured">
+          <div class="featured-grid">
+            <div>
+              <h3>Unitree Go2 Multi-Floor Guide Navigation</h3>
+              <p class="entry-meta">
+                Research Assistant, Human-Computer Interaction Lab, Nanjing University · 2026
+              </p>
+              <p>
+                An indoor guide-robot prototype built around a Unitree Go2 EDU, ROS 2 Foxy, Nav2, and the robot's existing sensing and motion interfaces.
+              </p>
+              <ul>
+                <li>
+                  Integrated point-cloud processing, 2D mapping, AMCL localization, global planning, path following, and Unitree motion bridging.
+                </li>
+                <li>
+                  Built a semantic navigation layer with named destinations, robot-safe anchors, multi-floor map organization, planner validation, and a human-assisted elevator workflow.
+                </li>
+                <li>
+                  Published bilingual documentation, configurations, maps, scripts, and debugging notes as an open-source engineering archive.
+                </li>
+              </ul>
+              <div class="entry-links">
+                <a href="https://github.com/Darhan7/go2-multifloor-guide-nav">GitHub Repository</a>
+                <a href="https://darhan7.github.io/go2-multifloor-guide-nav/">Documentation Website</a>
+              </div>
+            </div>
+
+            <ul class="fact-list" aria-label="Go2 project technical summary">
+              <li><strong>Robot</strong>Unitree Go2 EDU</li>
+              <li><strong>Navigation</strong>ROS 2 Foxy · Nav2 · AMCL · SLAM Toolbox</li>
+              <li><strong>Sensing</strong>LiDAR point clouds · LaserScan · TF</li>
+              <li><strong>System layer</strong>Semantic anchors · floor graph · route preview</li>
+              <li><strong>Public output</strong>Code · maps · configuration · bilingual documentation</li>
+            </ul>
           </div>
-          <ul>
-            <li>Developed a multimodal depth estimation framework with custom losses and multi-stage knowledge distillation.</li>
-            <li>Processed and calibrated RGB-NIR data synchronized with LiDAR for densification and mask filtering.</li>
-          </ul>
-        </article>
+        </div>
       </div>
     </section>
 
     <section class="section" id="experience">
-      <h2>Experience</h2>
-      <div class="grid-2">
-        <div class="card">
-          <div class="item-title">Education</div>
-          <div class="item-subtitle">Nanjing University · 2022.09 – 2026.06</div>
-          <ul>
-            <li>B.S. in Electronic Information Science &amp; Technology</li>
-            <li>School of Electronic Science and Engineering</li>
-            <li>Honors: Ethnic Minority Students’ Pomegranate Seed Scholarship (2024, 2025)</li>
-          </ul>
+      <div class="section-heading">
+        <div>
+          <h2>Additional Experience</h2>
+          <p class="section-kicker">Exploratory research, engineering, internship, and course projects.</p>
         </div>
-        <div class="card">
-          <div class="item-title">Internship</div>
-          <div class="item-subtitle">College of Water Conservancy and Architectural Engineering, Shihezi University · 2024.07 – 2024.09</div>
-          <ul>
-            <li>Analyzed multivariate environmental sensor data for anomaly detection and trend analysis.</li>
-            <li>Trained machine learning models including Random Forest and SVM for early anomaly detection.</li>
-          </ul>
+
+        <div class="section-body compact-grid">
+          <article class="compact-entry">
+            <h3>Exploratory RGB/NIR/Polarization Depth Estimation</h3>
+            <p class="compact-meta">
+              Multimodal fusion, custom losses, knowledge distillation, calibration, and sparse LiDAR supervision · Aug.–Oct. 2025
+            </p>
+          </article>
+
+          <article class="compact-entry">
+            <h3>3D Dynamic Heart Reconstruction from 2D Medical Imaging</h3>
+            <p class="compact-meta">Project Lead, Course Project · Feb.–May 2025</p>
+          </article>
+
+          <article class="compact-entry">
+            <h3>Reservoir-Computing-Transistor-Based Fall Detection</h3>
+            <p class="compact-meta">National Undergraduate Innovation Program · Nov. 2023–Dec. 2024</p>
+          </article>
+
+          <article class="compact-entry">
+            <h3>Quantum Implementation of Finite Element Analysis</h3>
+            <p class="compact-meta">Exchange Project, North Carolina State University · Jan.–Feb. 2025</p>
+          </article>
+
+          <article class="compact-entry">
+            <h3>Intelligent Risk Butler: Exchange-Rate Risk Inspection System</h3>
+            <p class="compact-meta">Core Member, 20th Citi Cup · Jan.–Jun. 2025</p>
+          </article>
+
+          <article class="compact-entry">
+            <h3>Environmental Sensor Data Analysis</h3>
+            <p class="compact-meta">Data Analysis Intern, Shihezi University · Jul.–Sep. 2024</p>
+          </article>
+
+          <article class="compact-entry">
+            <h3>Patent: Elderly Fall Detection Based on Reservoir Computing Transistors</h3>
+            <p class="compact-meta">Fifth Inventor · Application No. CN202411352818.X · Jan. 2025</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="projects">
-      <h2>Projects &amp; Other Work</h2>
-      <div class="timeline">
-        <article class="item">
-          <div class="item-head">
-            <div>
-              <div class="item-title">3D Dynamic Heart Reconstruction from 2D Medical Imaging</div>
-              <div class="item-subtitle">Course Project · Project Lead</div>
-            </div>
-            <div class="item-date">Feb 2025 – May 2025</div>
-          </div>
-          <ul>
-            <li>Led an end-to-end pipeline for preprocessing, segmentation, training, reconstruction, and myocardial motion visualization.</li>
-          </ul>
-        </article>
+    <section class="section" id="education">
+      <div class="section-heading">
+        <div>
+          <h2>Education</h2>
+          <p class="section-kicker">Academic background and honors.</p>
+        </div>
 
-        <article class="item">
-          <div class="item-head">
-            <div>
-              <div class="item-title">Elderly Fall Detection Based on Reservoir Computing Transistors</div>
-              <div class="item-subtitle">National Undergraduate Innovation and Entrepreneurship Training Program</div>
-            </div>
-            <div class="item-date">Nov 2023 – Dec 2024</div>
-          </div>
-          <ul>
-            <li>Built a hardware-software co-design system integrating analog computing, Arduino-based signal processing, Bluetooth transmission, and vision-based motion analysis.</li>
-            <li>Contributed to a related patent application as the fifth inventor.</li>
-          </ul>
-        </article>
+        <div class="section-body education-grid">
+          <article class="education-item">
+            <h3>University of Illinois Urbana-Champaign</h3>
+            <p>School of Information Sciences</p>
+            <p>Incoming M.S. in Information Management · Aug. 2026</p>
+          </article>
 
-        <article class="item">
-          <div class="item-head">
-            <div>
-              <div class="item-title">Quantum Implementation of Finite Element Analysis</div>
-              <div class="item-subtitle">North Carolina State University · Exchange Experience</div>
-            </div>
-            <div class="item-date">Jan 2025 – Feb 2025</div>
-          </div>
-          <ul>
-            <li>Implemented a quantum solver for FEM linear systems using Block Encoding and Quantum Signal Processing.</li>
-            <li>Explored BPX preconditioning to improve stability under high-condition-number settings.</li>
-          </ul>
-        </article>
+          <article class="education-item">
+            <h3>Nanjing University</h3>
+            <p>School of Electronic Science and Engineering</p>
+            <p>B.S. in Electronic Information Science &amp; Technology · 2022–2026</p>
+            <p>Ethnic Minority Students' Pomegranate Seed Scholarship · 2024, 2025</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <article class="item">
-          <div class="item-head">
-            <div>
-              <div class="item-title">Intelligent Risk Butler: Exchange Rate Risk Inspection System</div>
-              <div class="item-subtitle">20th Citi Cup Financial Innovation Application Competition · Core Member</div>
-            </div>
-            <div class="item-date">Jan 2025 – Jun 2025</div>
-          </div>
-          <ul>
-            <li>Developed the LLM module and participated in building a multi-currency exchange-rate risk assessment system.</li>
+    <section class="section" id="skills">
+      <div class="section-heading">
+        <div>
+          <h2>Technical Skills</h2>
+          <p class="section-kicker">Methods and tools used across research projects.</p>
+        </div>
+
+        <div class="section-body skills-grid">
+          <ul class="skill-list">
+            <li><strong>Programming:</strong> Python, C, MATLAB, Arduino</li>
+            <li><strong>Imaging and vision:</strong> multimodal fusion, depth estimation, illumination estimation, sensor calibration, geometric evaluation</li>
+            <li><strong>Sensors and data:</strong> RGB, active NIR, hyperspectral, polarization, LiDAR</li>
           </ul>
-        </article>
+
+          <ul class="skill-list">
+            <li><strong>Robotics:</strong> ROS 2, Nav2, AMCL, SLAM Toolbox, CycloneDDS, Unitree SDK 2</li>
+            <li><strong>Tools:</strong> Linux, Git, LaTeX, VMware</li>
+            <li><strong>Open source:</strong> technical documentation, reproducible configuration, project websites</li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <section class="section" id="contact">
-      <h2>Contact</h2>
-      <div class="card">
-        <p>
-          I am interested in research opportunities related to multimodal perception, geometry-oriented vision, and sensor fusion.
-        </p>
-        <div class="contact-list">
-          <div class="contact-row"><strong>Email:</strong> <a href="mailto:darhanjanat@smail.nju.edu.cn">darhanjanat@smail.nju.edu.cn</a></div>
-          <div class="contact-row"><strong>Phone:</strong> +86-198-5289-5035</div>
-          <div class="contact-row"><strong>Affiliation:</strong> School of Electronic Science and Engineering, Nanjing University</div>
+      <div class="section-heading">
+        <div>
+          <h2>Contact</h2>
+          <p class="section-kicker">Research and collaboration inquiries.</p>
+        </div>
+
+        <div class="section-body">
+          <p class="contact-copy">
+            I am currently interested in UIUC research opportunities involving computational imaging, multispectral sensing, optical or camera systems, sensor calibration, image reconstruction, and related machine-learning work.
+          </p>
+          <p class="contact-line">
+            Email: <a href="mailto:daerhan2@illinois.edu">daerhan2@illinois.edu</a>
+          </p>
         </div>
       </div>
     </section>
-
-    <footer class="footer">
-      <div>© 2026 Daerhan Jianati. Last updated for a simple academic homepage draft.</div>
-    </footer>
   </main>
+
+  <footer class="footer">
+    <div class="container">© 2026 Daerhan Jianati · Last updated July 2026</div>
+  </footer>
 </body>
 </html>
