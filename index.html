@@ -108,7 +108,28 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .hero-inner { max-width: 880px; }
+    .hero-inner {
+      max-width: var(--max-width);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 220px;
+      gap: 58px;
+      align-items: center;
+    }
+    
+    .hero-copy {
+      min-width: 0;
+    }
+    
+    .hero-photo {
+      display: block;
+      width: 220px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface);
+    }
 
     .status {
       margin: 0 0 14px;
@@ -442,6 +463,16 @@
 
       .hero { padding: 64px 0 54px; }
 
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .hero-photo {
+        width: 160px;
+        order: -1;
+      }      
+
       .section-heading {
         grid-template-columns: 1fr;
         gap: 24px;
@@ -510,20 +541,44 @@
 
   <section class="hero" id="top">
     <div class="container hero-inner">
-      <p class="status">Incoming M.S. Student · University of Illinois Urbana-Champaign</p>
-      <h1>Daerhan Jianati</h1>
-      <p class="hero-lead">
-        I am interested in computational imaging, multispectral sensing, and computer vision.
-      </p>
-      <p class="hero-detail">
-        My strongest current research experience is in RGB–active NIR fusion, with additional work in RGB–hyperspectral imaging and real-robot perception systems. In the longer term, I hope to study how physical imaging models, statistical priors, spectral information, and human perceptual data can help imaging systems better represent visual appearance.
-      </p>
-      <div class="hero-links" aria-label="Profile links">
-        <a href="mailto:daerhan2@illinois.edu">Email</a>
-        <a href="Daerhan_Jianati_CV.pdf">CV</a>
-        <a href="https://github.com/Darhan7">GitHub</a>
-        <a href="https://darhan7.github.io/go2-multifloor-guide-nav/">Go2 Project</a>
+      <div class="hero-copy">
+        <p class="status">
+          Incoming M.S. Student · University of Illinois Urbana-Champaign
+        </p>
+    
+        <h1>Daerhan Jianati</h1>
+    
+        <p class="hero-lead">
+          I am interested in computational imaging, multispectral sensing,
+          and computer vision.
+        </p>
+    
+        <p class="hero-detail">
+          My strongest current research experience is in RGB–active NIR fusion,
+          with additional work in RGB–hyperspectral imaging and real-robot
+          perception systems. In the longer term, I hope to study how physical
+          imaging models, statistical priors, spectral information, and human
+          perceptual data can help imaging systems better represent visual
+          appearance.
+        </p>
+    
+        <div class="hero-links" aria-label="Profile links">
+          <a href="mailto:daerhan2@illinois.edu">Email</a>
+          <a href="Daerhan_Jianati_CV.pdf">CV</a>
+          <a href="https://github.com/Darhan7">GitHub</a>
+          <a href="https://darhan7.github.io/go2-multifloor-guide-nav/">
+            Go2 Project
+          </a>
+        </div>
       </div>
+    
+      <img
+        class="hero-photo"
+        src="assets/daerhan.jpg"
+        alt="Portrait of Daerhan Jianati"
+        width="220"
+        height="275"
+      />
     </div>
   </section>
 
