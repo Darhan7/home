@@ -1,0 +1,245 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[letterpaper,left=0.68in,right=0.68in,top=0.52in,bottom=0.56in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\definecolor{navy}{HTML}{0B3550}
+\definecolor{accent}{HTML}{0F4C6A}
+\definecolor{dateblue}{HTML}{123E5A}
+\definecolor{bodygray}{HTML}{27323A}
+\definecolor{rulegray}{HTML}{A8BBC8}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  linkcolor=accent
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[R]{\scriptsize\color{dateblue}Daerhan Jianati \textbar\ Page \thepage\ of \pageref{LastPage}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\urlstyle{same}
+\color{bodygray}
+
+\titleformat{\section}
+  {\fontsize{13.7}{16.3}\selectfont\bfseries\color{navy}}
+  {}{0pt}{}
+  [\vspace{0.13em}\color{rulegray}\titlerule]
+\titlespacing*{\section}{0pt}{0.68em}{0.40em}
+
+\newcommand{\headerlink}[2]{\href{#1}{#2}}
+\newcommand{\datefont}[1]{{\small\bfseries\color{dateblue}#1}}
+\newcommand{\projectlink}[2]{\href{#1}{\textcolor{accent}{\textbf{#2}}}}
+
+\newcommand{\researchentry}[3]{%
+  \begin{tabularx}{\textwidth}{@{}X>{\raggedleft\arraybackslash}p{1.58in}@{}}
+    {\fontsize{10.9}{13.2}\selectfont\bfseries #1} & \datefont{#2}\\[-0.01em]
+    {\small\itshape #3} &
+  \end{tabularx}\par
+}
+
+\newcommand{\compactentry}[3]{%
+  \begin{tabularx}{\textwidth}{@{}X>{\raggedleft\arraybackslash}p{1.58in}@{}}
+    {\fontsize{10.65}{13}\selectfont\bfseries #1} & \datefont{#2}\\[0.04em]
+    {\small #3} &
+  \end{tabularx}\par
+}
+
+\newcommand{\tightbullets}{%
+  \begin{itemize}[leftmargin=1.18em,itemsep=0.18em,topsep=0.18em,parsep=0pt,partopsep=0pt]
+}
+\newcommand{\tightbulletsend}{\end{itemize}}
+\newcommand{\entrygap}{\vspace{0.42em}}
+
+\begin{document}
+\fontsize{10.5}{12.85}\selectfont
+
+% ==================== Header ====================
+\begin{center}
+  {\fontsize{23.5}{26}\selectfont\bfseries\color{navy}Daerhan Jianati}\\[0.35em]
+  {\small
+    \href{mailto:daerhan2@illinois.edu}{daerhan2@illinois.edu}
+    \enspace\textbar\enspace
+    \headerlink{https://darhan7.github.io/home/}{Personal Website}
+    \enspace\textbar\enspace
+    \headerlink{https://github.com/Darhan7}{GitHub}
+  }
+\end{center}
+\vspace{-0.28em}
+
+% ==================== Education ====================
+\section{Education}
+
+\begin{tabularx}{\textwidth}{@{}X>{\raggedleft\arraybackslash}p{1.58in}@{}}
+  {\fontsize{10.9}{13.2}\selectfont\bfseries University of Illinois Urbana-Champaign} & \datefont{Aug. 2026--May 2028}\\[-0.01em]
+  {\small\itshape School of Information Sciences} & \\
+  {\small M.S. in Information Management} &
+\end{tabularx}\par
+
+\vspace{0.32em}
+
+\begin{tabularx}{\textwidth}{@{}X>{\raggedleft\arraybackslash}p{1.58in}@{}}
+  {\fontsize{10.9}{13.2}\selectfont\bfseries Nanjing University} & \datefont{Sep. 2022--Jun. 2026}\\[-0.01em]
+  {\small\itshape School of Electronic Science and Engineering} & \\
+  {\small B.S. in Electronic Information Science \& Technology} &
+\end{tabularx}\par
+{\small\textbf{Honor:} Ethnic Minority Students' Pomegranate Seed Scholarship, 2024 and 2025}
+
+% ==================== Research Interests ====================
+\section{Research Interests}
+{\small\bfseries
+  Computational Imaging \enspace\textbar\enspace
+  Bio-Inspired Visual Perception \enspace\textbar\enspace
+  Multimodal Sensor Fusion\\[0.18em]
+  Robot Vision \enspace\textbar\enspace
+  Spectral Imaging \enspace\textbar\enspace
+  Human Visual Perception
+}
+
+% ==================== Selected Research ====================
+\section{Selected Research Experience}
+
+\researchentry
+  {Bio-Inspired Multi-Agent Perception for RGB--NIR Robot Vision}
+  {Sep. 2026--Present}
+  {Ongoing Research; multimodal visual perception and geometric estimation}
+\tightbullets
+  \item Developing an insect-inspired perception framework extending prior RGB--active NIR fusion into lightweight sensing and task-specialized modules for low-light, motion, depth, and visual memory.
+  \item Designed structured shared perceptual memory with on-demand cross-agent retrieval; prototyped feedback between depth estimation and visual pose/memory modules.
+  \item Evaluating depth, visual odometry/pose, feature matching, temporal consistency, and computational cost, with optional sparse LiDAR as an additional geometric input.
+\tightbulletsend
+
+\entrygap
+
+\researchentry
+  {Geometry-Guided Diffusion Restoration for RGB--NIR Imaging}
+  {2026--Present}
+  {Ongoing Research; low-light restoration and geometric consistency}
+\tightbullets
+  \item Developing region-aware diffusion restoration for simultaneous RGB underexposure and active-NIR saturation, building on failure cases identified during prior fusion research.
+  \item Exploring geometry/depth guidance and spatial confidence masks; designing evaluations for depth, feature matching, and temporal consistency. Experiments are ongoing.
+\tightbulletsend
+
+\entrygap
+
+\researchentry
+  {Self-Supervised RGB--Active NIR Fusion for Geometric Perception}
+  {Nov. 2025--May 2026}
+  {Completed Research; collaboration with Prof. Guoyu Lu, Indiana University}
+\tightbullets
+  \item Developed a lightweight single-channel RGB--NIR representation using pixel-wise fusion, stereo reprojection, and an exposure-aware reliability gate.
+  \item Evaluated the representation on stereo depth, feature matching, SfM/SLAM diagnostics, detection, and efficiency (79.36 FPS; 560 MB peak memory in the evaluated configuration).
+  \item This completed work informs ongoing diffusion restoration and bio-inspired multi-agent perception research. \projectlink{https://github.com/Darhan7/Learning-a-Single-Channel-Fusion-Representation-from-RGB-and-Active-NIR-via-Self-Supervision}{Code}
+\tightbulletsend
+
+\entrygap
+
+\researchentry
+  {Per-Pixel Illumination Estimation from HR-RGB and LR-HSI}
+  {Jun. 2025--Oct. 2025}
+  {Student Researcher, CITE Lab, Nanjing University}
+\tightbullets
+  \item Developed an RGB--hyperspectral sensing pipeline for per-pixel illumination estimation; reproduced baselines and tested spatial downsampling and fusion settings.
+\tightbulletsend
+
+\entrygap
+
+\researchentry
+  {Unitree Go2 Multi-Floor Guide Navigation}
+  {Apr. 2026--Jul. 2026}
+  {Research Assistant, Human-Computer Interaction Lab, Nanjing University}
+\tightbullets
+  \item Built a ROS 2/Nav2 guide-robot prototype with LiDAR-based mapping, localization, global planning, motion integration, semantic destinations, and a human-assisted elevator workflow.
+  \item Open-sourced code, maps, configurations, and bilingual documentation. \projectlink{https://github.com/Darhan7/go2-multifloor-guide-nav}{Code} \textbar\ \projectlink{https://darhan7.github.io/go2-multifloor-guide-nav/}{Docs}
+\tightbulletsend
+
+% ==================== Skills ====================
+\section{Technical Skills}
+{\renewcommand{\arraystretch}{1.14}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{1.34in}X@{}}
+Programming & Python, C, MATLAB, Arduino \\
+Imaging \& Vision & RGB--NIR fusion, depth/pose estimation, feature matching, illumination estimation, geometric evaluation \\
+Robotics & ROS 2, Nav2, visual odometry/SLAM, modular perception, Unitree Go2 \\
+Sensors \& Data & RGB, active NIR, hyperspectral, polarization, LiDAR \\
+Tools & PyTorch, OpenCV, NumPy, Linux, Git, LaTeX \\
+\end{tabularx}}
+
+% ==================== Additional Projects ====================
+\section{Additional Research \& Projects}
+
+\compactentry
+  {Exploratory RGB/NIR/Polarization Depth Estimation}
+  {Aug. 2025--Oct. 2025}
+  {Explored multimodal fusion, custom losses, knowledge distillation, calibration, and sparse LiDAR supervision.}
+
+\entrygap
+
+\compactentry
+  {3D Dynamic Heart Reconstruction from 2D Medical Imaging}
+  {Feb. 2025--May 2025}
+  {Project Lead, Course Project; led preprocessing, segmentation, reconstruction, and myocardial-motion visualization.}
+
+\entrygap
+
+\compactentry
+  {Intelligent Risk Butler: Exchange-Rate Risk Inspection System}
+  {Jan. 2025--Jun. 2025}
+  {Core Member, Algorithm Group, 20th Citi Cup; developed an LLM module and exchange-rate risk signal pipeline.}
+
+\entrygap
+
+\compactentry
+  {Quantum Implementation of Finite Element Analysis}
+  {Jan. 2025--Feb. 2025}
+  {Exchange Project, North Carolina State University; implemented block-encoding/QSP-based solvers and explored BPX preconditioning.}
+
+\entrygap
+
+\compactentry
+  {Reservoir-Computing-Transistor-Based Fall Detection}
+  {Nov. 2023--Dec. 2024}
+  {National Undergraduate Innovation Program; contributed to a hardware-software system integrating analog computing, Arduino, Bluetooth, and vision-based motion analysis.}
+
+% ==================== Internship ====================
+\section{Industry Experience}
+
+\researchentry
+  {Data Analysis Intern}
+  {Jul. 2024--Sep. 2024}
+  {College of Water Conservancy and Architectural Engineering, Shihezi University}
+\tightbullets
+  \item Processed multivariate environmental sensor data and evaluated machine-learning models for anomaly detection in irrigation leakage and drought stress.
+\tightbulletsend
+
+% ==================== Outputs ====================
+\section{Research Outputs}
+
+\compactentry
+  {Unpublished Research Manuscript}
+  {2026}
+  {Daerhan Jianati and G. Lu. ``Learning a Single-Channel Fusion Representation from RGB and Active NIR via Self-Supervision.'' (Unpublished.)}
+
+\entrygap
+
+\compactentry
+  {Patent Application}
+  {Jan. 2025}
+  {``A System and Method for Elderly Fall Detection Based on Reservoir Computing Transistors.'' Fifth inventor; Application No. CN202411352818.X.}
+
+\end{document}
