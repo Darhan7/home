@@ -554,6 +554,7 @@
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
         <a href="#skills">Skills</a>
+        <a href="#outlook">Outlook</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -564,6 +565,7 @@
       <img
         class="hero-photo"
         src="assets/daerhan.jpg"
+        onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/Darhan7/home/main/assets/daerhan.jpg';"
         alt="Portrait of Daerhan Jianati"
         width="220"
         height="275"
@@ -571,23 +573,20 @@
 
       <div class="hero-copy">
         <p class="status">
-          Incoming M.S. Student · University of Illinois Urbana-Champaign
+          M.S. Student · University of Illinois Urbana-Champaign
         </p>
 
         <h1>Daerhan Jianati</h1>
 
         <p class="hero-lead">
-          I am interested in computational imaging, multispectral sensing,
-          and computer vision.
+          I work on computational imaging and bio-inspired multimodal visual perception.
         </p>
 
         <p class="hero-detail">
-          My strongest current research experience is in RGB–active NIR fusion,
-          with additional work in RGB–hyperspectral imaging and real-robot
-          perception systems. In the longer term, I hope to study how physical
-          imaging models, statistical priors, spectral information, and human
-          perceptual data can help imaging systems better represent visual
-          appearance.
+          My current research focuses on insect-inspired multi-agent RGB–NIR perception,
+          geometry-guided diffusion restoration in degraded scenes, and lightweight
+          sensor fusion for depth and motion understanding. My broader interests include
+          computational imaging, spectral sensing, and human visual perception.
         </p>
 
         <div class="hero-links" aria-label="Profile links">
@@ -615,44 +614,28 @@
         <div class="section-body intro-grid">
           <div class="intro-copy">
             <p>
-              I will begin the M.S. in Information Management program at the
-              University of Illinois Urbana-Champaign in August 2026. I received
+              I am an M.S. student in Information Management at the
+              University of Illinois Urbana-Champaign. I received
               my B.S. in Electronic Information Science &amp; Technology from
               Nanjing University.
             </p>
 
             <p>
-              My research interests include
-              <strong>computational imaging</strong>,
-              <strong>multispectral and spectral imaging</strong>,
-              <strong>statistical image reconstruction</strong>,
-              <strong>multimodal sensing and perception</strong>,
-              <strong>human-perception-informed imaging</strong>, and
-              <strong>sensor calibration for real imaging systems</strong>.
-              My recent work has centered on multimodal sensing and computer
-              vision, with the most extensive experience in self-supervised
-              RGB–active NIR fusion, as well as additional work in
-              RGB–hyperspectral fusion, sparse LiDAR supervision, and robotic
-              navigation.
+              My work connects <strong>computational imaging</strong>,
+              <strong>multimodal sensing</strong>, and <strong>robot vision</strong>.
+              Building on self-supervised RGB–active NIR fusion, I am now developing
+              biologically inspired perception modules that cooperate on motion,
+              geometry, and visual memory through selective information retrieval.
+              In parallel, I am investigating diffusion-based restoration for
+              low-light scenes where both sensing modalities become unreliable.
             </p>
 
             <p>
-              I am particularly interested in research that connects real
-              imaging systems with computational reconstruction: understanding
-              how sensors measure the physical world, how statistical or learned
-              priors compensate for incomplete measurements, and how
-              reconstructed images relate to human visual perception.
+              I am interested in systems that remain reliable when visual inputs
+              are incomplete or degraded, and in understanding how sensing,
+              geometry, and perception should be modeled together.
             </p>
 
-            <div class="direction-note">
-              <strong>Long-term research direction</strong>
-              <p>
-                I am interested in combining physical imaging models, spectral
-                representations, statistical learning, and carefully collected
-                human perceptual data to study perceptually equivalent image
-                reconstruction and the limitations of conventional cameras.
-              </p>
-            </div>
           </div>
         </div>
       </div>
@@ -670,29 +653,74 @@
         <div class="section-body entry-list">
           <article class="entry">
             <div>
-              <h3>Self-Supervised RGB–Active NIR Fusion for Visual Perception</h3>
+              <h3>Bio-Inspired Multi-Agent Perception for RGB–NIR Robot Vision</h3>
+              <p class="entry-meta">Ongoing Research · Modular sensing and geometric perception</p>
+              <ul>
+                <li>
+                  Developing a modular visual system combining lightweight RGB–active NIR
+                  fusion (LaminaFuse) with task-specialized, insect-inspired perception
+                  components for low-light temporal cues, motion, depth, and visual memory.
+                </li>
+                <li>
+                  Designed a structured shared perceptual memory with on-demand retrieval
+                  between task-specific modules, and prototyped depth–pose feedback.
+                </li>
+                <li>
+                  Evaluating geometric accuracy, temporal consistency, and compute cost,
+                  including comparisons against simpler same-budget feedback baselines.
+                  The complete multi-agent system remains under development.
+                </li>
+              </ul>
+            </div>
+            <div class="entry-date">Sep. 2026–Present</div>
+          </article>
+
+          <article class="entry">
+            <div>
+              <h3>Geometry-Guided Diffusion Restoration for RGB–NIR Imaging</h3>
+              <p class="entry-meta">Ongoing Research · Low-light image restoration and geometric consistency</p>
+              <ul>
+                <li>
+                  Developing a region-aware diffusion restoration method for scenes
+                  where RGB underexposure and active-NIR saturation coincide,
+                  causing complementary sensors to fail in the same areas.
+                </li>
+                <li>
+                  Investigating confidence masks and depth- or geometry-guided
+                  constraints to restore degraded regions while maintaining scene structure.
+                </li>
+                <li>
+                  Designing evaluations of downstream depth, feature matching,
+                  and temporal consistency; the method is in active development,
+                  with experiments underway.
+                </li>
+              </ul>
+            </div>
+            <div class="entry-date">2026–Present</div>
+          </article>
+
+          <article class="entry">
+            <div>
+              <h3>Self-Supervised RGB–Active NIR Fusion for Geometric Perception</h3>
               <p class="entry-meta">
-                Project Lead and First Author · Advisor: G. Lu
+                First-Author Research · Collaboration with Prof. Guoyu Lu
               </p>
 
               <ul>
                 <li>
-                  Developed a lightweight single-channel fusion framework for
-                  pixel-aligned RGB and active NIR using pixel-wise mixing,
-                  stereo reprojection, and an exposure-aware reliability gate.
+                  Developed a lightweight single-channel fusion representation for
+                  registered RGB and active NIR using pixel-wise mixing,
+                  reprojection constraints, and an exposure-aware reliability gate.
                 </li>
                 <li>
-                  Evaluated the fused representation across five downstream
-                  tasks—object detection, stereo depth estimation, feature
-                  matching, Structure from Motion (SfM), and Simultaneous
-                  Localization and Mapping (SLAM). The model runs at 79.36 FPS
-                  with 560 MB peak memory.
+                  Evaluated stereo depth, feature matching, SfM/SLAM diagnostics,
+                  detection, and efficiency; observed 79.36 FPS and 560 MB peak memory
+                  for the evaluated configuration.
                 </li>
                 <li>
-                  Currently extending the study with expanded training and
-                  evaluation protocols, robustness analysis under calibration
-                  perturbations, ablation studies, and experiments under
-                  challenging illumination conditions.
+                  Further robustness experiments focus on challenging illumination,
+                  calibration variation, and sensor degradation. The associated
+                  manuscript is unpublished.
                 </li>
               </ul>
             </div>
@@ -918,6 +946,29 @@
       </div>
     </section>
 
+    <section class="section" id="outlook">
+      <div class="section-heading">
+        <div>
+          <h2>Research Outlook</h2>
+          <p class="section-kicker">
+            A longer-term direction beyond my ongoing projects.
+          </p>
+        </div>
+        <div class="section-body">
+          <div class="direction-note">
+            <strong>VisCalib · Proposed Human Perceptual Calibration Dataset</strong>
+            <p>
+              I am exploring an interactive data-collection concept for studying
+              how captured colors differ from human visual experience. A possible
+              direction is to combine perceptual matching with compact spectral
+              controls and, later, physical illumination models.
+              This remains a research concept rather than a released dataset.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="contact">
       <div class="section-heading">
         <div>
@@ -948,7 +999,7 @@
 
   <footer class="footer">
     <div class="container">
-      © 2026 Daerhan Jianati · Last updated August 2026
+      © 2026 Daerhan Jianati · Last updated October 2026
     </div>
   </footer>
 </body>
