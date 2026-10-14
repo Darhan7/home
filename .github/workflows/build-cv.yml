@@ -17,7 +17,7 @@ jobs:
       - name: Install LaTeX
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended cm-super
+          sudo apt-get install -y --no-install-recommends texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended lmodern cm-super poppler-utils
       - name: Compile two-page CV
         run: |
           pdflatex -interaction=nonstopmode -halt-on-error Daerhan_Jianati_CV.tex
